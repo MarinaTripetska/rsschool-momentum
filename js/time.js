@@ -20,7 +20,7 @@ const options = {weekday: 'long', day: 'numeric',  month: 'long', timeZone: 'UTC
   
     time.textContent = currentTime;
     localDate.textContent = currentDate;
-    greeting.textContent = getTimeOfDay(hours);
+    greeting.textContent =`Good ${getTimeOfDay(hours)}, `;
 
     setTimeout(showTime, 1000)
 };
@@ -31,13 +31,13 @@ showTime();
 function getTimeOfDay(hours) {
        let result;
     if (hours < 6) {
-    result = `Good night, `
+    result = `night`
     } else if (hours >= 6 && hours < 12) {
-        result = `Good morning, `
+        result = `morning`
     } else if (hours >= 12 && hours < 18) {
-       result = `Good afternoon, ` 
+       result = `afternoon` 
     } else {
-        result = `Good evening, `
+        result = `evening`
 }
     return result;
 };
@@ -53,3 +53,4 @@ function getLocalStorage() {
 };
 
 
+export { getTimeOfDay }

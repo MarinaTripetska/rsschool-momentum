@@ -4,4 +4,6 @@ export default {
     date: document.querySelector('.date'),
     greeting: document.querySelector('.greeting'),
     name: document.querySelector('.name'),
+    slidePrev: document.querySelector('.slide-prev'),
+    slideNext: document.querySelector('.slide-next'),
 }
