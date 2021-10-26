@@ -20,7 +20,7 @@ temperature: document.querySelector('.temperature'),
     changeQuote: document.querySelector('.change-quote'),
 
     playPrev: document.querySelector('.play-prev'),
-    play: document.querySelector('.play'),
+    play: document.getElementById('playMainBtn'),
     playNext: document.querySelector('.play-next'),
 
     playList: document.querySelector('.play-list'),

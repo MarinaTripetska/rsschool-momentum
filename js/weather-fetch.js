@@ -7,6 +7,8 @@ let city = 'Minsk';
 
 window.addEventListener('beforeunload', setLocalStorage);
 window.addEventListener('load', () => {
+  const elems = document.querySelectorAll('.play-item');
+  elems[0].classList.add('item-active')
   getLocalStorage();
   getWeather(lang, city);
  }

@@ -47,36 +47,41 @@ body {
 }
 
 .play-item {
+   
     position: relative;
     padding: 5px;
-    padding-left: 20px;
+    padding-left: 100px;
+    margin-bottom: 20px;
     list-style: none;
     opacity: .8;
     cursor: pointer;
     transition: .3s;
-
     z-index: 100;
 }
 
 .play-item:hover {
     opacity: 1;
+    
 }
 
 .play-item::before {
     content: "\2713";
     position: absolute;
     left: 0;
-    top: 2px;
+    top: 10px;
     font-weight: 900;
-}
+  }
 
 .item-active::before {
     color: #C5B358;
 }
-
+.play-item.play{
+    background-size: 30px 30px;
+}
 .player-icon,
 .slider-icon,
 .change-quote {
+    display: block;
     width: 32px;
     height: 32px;
     background-size: 32px 32px;
@@ -122,7 +127,11 @@ body {
 .play-next {
     background-image: url("../assets/svg/play-next.svg");
 }
-
+.audio-name{
+  position: absolute;
+  top: 13px;
+  width: 300px;
+}
 .weather {
     display: flex;
     flex-direction: column;

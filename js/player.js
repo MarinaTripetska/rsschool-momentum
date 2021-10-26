@@ -2,106 +2,96 @@ import refs from './refs.js';
 const { playPrev, play: playBtn, playNext, playList: playListEl } = refs;
 import playList from './playList.js'
 
-
 let isPlay = false;
 let playNum = 0; 
 
-//створює розмітку списку
 playList.forEach((el) => {
     const li = document.createElement('li');
-    li.classList.add('play-item');
+    li.classList.add('play-item', 'play', 'player-icon');
 
     const audioEl = document.createElement('audio');
     audioEl.src = el.src;
-    audioEl.setAttribute('controls', 'controls');
 
-    li.append(audioEl);
+    const audioName = document.createElement('p');
+    audioName.classList.add('audio-name');
+    audioName.textContent = el.title;
+      
+    li.append(audioEl, audioName);
     playListEl.append(li);
-})
+});
 
-
-
-
-
-
+const elems = [...document.querySelectorAll('.play-item')];
 
 const audio = new Audio();
 
-function playAudio() {
-  
-   
-    if (!isPlay) {
-        
-        audio.src = './assets/sounds/aqua-caelestis.mp3';
-        // audio.stc = srcAdress;
-        audio.currentTime = 0;
+function playAudio(srcAdress) {
+     elems.forEach((el) =>{
+       el.classList.remove('item-active', 'pause') 
+     })
+     elems[playNum].classList.add('item-active');
+    
+   if (!isPlay) {
+        audio.src = srcAdress;
         audio.play();
         playBtn.classList.add('pause');
+        elems[playNum].classList.add('pause', 'item-active');
         isPlay = true;
     }
     else {
         audio.pause();
         isPlay = false;
-      playBtn.classList.remove('pause')
-
-    }
-  
-}
+        playBtn.classList.remove('pause');
+        elems[playNum].classList.remove('pause');
+    };  
+};
 
 function playPrevAudio() {
- const elems = document.querySelectorAll('.play-item');
     elems.forEach((el) => {
-        el.classList.remove('item-active')
-    });
-   
-
-   
+        el.classList.remove('item-active', 'pause')
+    });  
     if (playNum === 0) {
         playNum = 4;
     };
- playNum -= 1;
-
-    if (isPlay) {
-       isPlay = false;
+    playNum -= 1;
+    isPlay = false;
     audio.pause();
-    playBtn.classList.remove('pause') 
-    }
-    
-    // console.log(playNum);
-
- elems[playNum].classList.add('item-active')
-   playAudio(playList[playNum].src)     
-}
+    playBtn.classList.remove('pause')
+    elems[playNum].classList.remove('pause');
+    elems[playNum].classList.add('item-active')
+        
+};
 
 function playNextAudio() {
-    const elems = document.querySelectorAll('.play-item');
     elems.forEach((el) =>{
-       el.classList.remove('item-active') 
+       el.classList.remove('item-active', 'pause') 
     })
-   
-    // console.log(elems);
-
     playNum += 1;
-    
     if (playNum === 4) {
         playNum = 0;
     };
-
-    // console.log(playNum);
-
-    if (isPlay) {
-       isPlay = false;
+    isPlay = false;
     audio.pause();
-    playBtn.classList.remove('pause') 
-    }
+    playBtn.classList.remove('pause');
+    elems[playNum].classList.add('item-active');
+};
 
-    elems[playNum].classList.add('item-active')
-   playAudio(playList[playNum].src)  
-}
+elems.forEach((el, index) => {
+    el.addEventListener('click', () => {
+        audio.pause();
+         playNum = index;
+        el.classList.add('item-active');
+        
+        playAudio(el.firstChild.src);
+           
+    });
+  
+});
 
 playBtn.addEventListener('click', () => {
-    playAudio();
+        playAudio(playList[playNum].src);
  }
 );
-// playPrev.addEventListener('click', playPrevAudio);
-// playNext.addEventListener('click', playNextAudio);
+
+playPrev.addEventListener('click', playPrevAudio);
+
+playNext.addEventListener('click', playNextAudio);
