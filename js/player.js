@@ -24,6 +24,7 @@ const elems = [...document.querySelectorAll('.play-item')];
 
 const audio = new Audio();
 
+
 function playAudio(srcAdress) {
      elems.forEach((el) =>{
        el.classList.remove('item-active', 'pause') 
@@ -32,7 +33,8 @@ function playAudio(srcAdress) {
     
    if (!isPlay) {
         audio.src = srcAdress;
-        audio.play();
+       audio.play();
+       
         playBtn.classList.add('pause');
         elems[playNum].classList.add('pause', 'item-active');
         isPlay = true;
@@ -45,6 +47,7 @@ function playAudio(srcAdress) {
     };  
 };
 
+
 function playPrevAudio() {
     elems.forEach((el) => {
         el.classList.remove('item-active', 'pause')
@@ -54,10 +57,11 @@ function playPrevAudio() {
     };
     playNum -= 1;
     isPlay = false;
-    audio.pause();
-    playBtn.classList.remove('pause')
-    elems[playNum].classList.remove('pause');
+    // audio.pause();
+    // playBtn.classList.remove('pause')
+    // elems[playNum].classList.remove('pause');
     elems[playNum].classList.add('item-active')
+     playAudio(elems[playNum].firstChild.src)
         
 };
 
@@ -70,22 +74,35 @@ function playNextAudio() {
         playNum = 0;
     };
     isPlay = false;
-    audio.pause();
-    playBtn.classList.remove('pause');
+    // audio.pause();
+    // playBtn.classList.remove('pause');
+    playAudio(elems[playNum].firstChild.src)
+    
     elems[playNum].classList.add('item-active');
+
 };
+
 
 elems.forEach((el, index) => {
     el.addEventListener('click', () => {
-        audio.pause();
+        // audio.pause();
+        isPlay = false;
+       
+        
          playNum = index;
         el.classList.add('item-active');
+         playAudio(el.firstChild.src);
         
-        playAudio(el.firstChild.src);
            
     });
   
 });
+
+audio.addEventListener('ended', () => {
+    // isPlay = false;
+    playNextAudio();
+}
+);
 
 playBtn.addEventListener('click', () => {
         playAudio(playList[playNum].src);
