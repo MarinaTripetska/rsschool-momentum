@@ -4,7 +4,10 @@ const { time, date: localDate, greeting, name: userName } = refs;
 
 
 window.addEventListener('beforeunload', setLocalStorage);
-window.addEventListener('load', getLocalStorage);
+window.addEventListener('DOMContentLoaded', () => {
+    getLocalStorage();
+       showTime();    
+});
 
 
 
@@ -25,11 +28,12 @@ const options = {weekday: 'long', day: 'numeric',  month: 'long', timeZone: 'UTC
     setTimeout(showTime, 1000)
 };
 
-showTime();
+
 
 
 function getTimeOfDay(hours) {
-       let result;
+    let result;
+    
     if (hours < 6) {
     result = `night`
     } else if (hours >= 6 && hours < 12) {

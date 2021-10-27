@@ -2,11 +2,14 @@ export default {
     body: document.querySelector('body'),
     time: document.querySelector('.time'),
     date: document.querySelector('.date'),
+
+    greetingContainer: document.querySelector('.greeting-container'),
     greeting: document.querySelector('.greeting'),
     name: document.querySelector('.name'),
     slidePrev: document.querySelector('.slide-prev'),
     slideNext: document.querySelector('.slide-next'),
 
+     weather: document.querySelector('.weather'),
     weatherIcon: document.querySelector('.weather-icon'),
 temperature: document.querySelector('.temperature'),
     weatherDescription: document.querySelector('.weather-description'),
@@ -15,14 +18,33 @@ temperature: document.querySelector('.temperature'),
     humidity: document.querySelector('.humidity'),
     weatherError:  document.querySelector('.weather-error'),
 
+    quoteContainer: document.querySelector('.quote-container'),
     quote: document.querySelector('.quote'),
    author: document.querySelector('.author'),
     changeQuote: document.querySelector('.change-quote'),
 
+    player: document.querySelector('.player'),
     playPrev: document.querySelector('.play-prev'),
     play: document.getElementById('playMainBtn'),
     playNext: document.querySelector('.play-next'),
-
     playList: document.querySelector('.play-list'),
 
+    todoContainer: document.querySelector('.todo'),
+    toDoListOpen: document.getElementById('toDoListOpen'),
+toDoWindow: document.getElementById('toDoWindow'),
+btnAddElem: document.getElementById("todo-button-add"),
+         inputElem: document.getElementById("input-txt"),
+      tasksList: document.querySelector(".tasks-list"),
+    notificationElem: document.querySelector(".notification"),
+      
+    settingsOpenBtn: document.getElementById('settingsOpenBtn'),
+    settingsWindow: document.getElementById('settingsWindow'),
+    showTimeFlag: document.getElementById('show-time'),
+    showDateFlag: document.getElementById('show-date'),
+    showGreetingFlag: document.getElementById('show-greeting'),
+    showWeatherFlag: document.getElementById('show-weather'),
+    showPlayerFlag: document.getElementById('show-player'),
+    showTodoFlag: document.getElementById('show-todo'),
+    showQuoteFlag: document.getElementById('show-quote'),
+    
 }

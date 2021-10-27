@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Arial-MT';
     src: url("../assets/fonts/Arial-MT.woff");
-    /* Путь к файлу со шрифтом */
+    
 }
 
 * {
@@ -22,6 +22,14 @@ body {
     background-blend-mode: multiply;
     transition: background-image 1s ease-in-out;
 }
+
+.hidden {
+    visibility: hidden;
+    pointer-events: none !important;    
+    opacity: 0 !important;    
+}
+
+
 
 .header {
     display: flex;
@@ -49,9 +57,8 @@ body {
 .play-item {
    
     position: relative;
-    padding: 5px;
+    padding: 0 5px;
     padding-left: 100px;
-    margin-bottom: 20px;
     list-style: none;
     opacity: .8;
     cursor: pointer;
@@ -80,7 +87,8 @@ body {
 }
 .player-icon,
 .slider-icon,
-.change-quote {
+.change-quote, 
+.settings-icon {
     display: block;
     width: 32px;
     height: 32px;
@@ -97,13 +105,15 @@ body {
 
 .player-icon:hover,
 .slider-icon:hover,
-.change-quote:hover {
+.change-quote:hover,
+.settings-icon:hover {
     opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
-.change-quote:active {
+.change-quote:active,
+.settings-icon:active {
     border: 0;
     outline: 0;
     transform: scale(1.1);
@@ -195,7 +205,9 @@ body {
     top: 50%;
     margin-top: -16px;
     cursor: pointer;
+    z-index: 10;
 }
+
 
 .slide-prev {
     left: 20px;
@@ -208,6 +220,9 @@ body {
 }
 
 .time {
+opacity: 1;
+transition: 350ms ease-in-out;
+
     min-height: 124px;
     margin-bottom: 10px;
     font-family: 'Arial-MT';
@@ -216,6 +231,9 @@ body {
 }
 
 .date {
+opacity: 1;
+transition: 350ms ease-in-out;
+
     min-height: 28px;
     font-size: 24px;
     margin-bottom: 20px;
@@ -263,6 +281,12 @@ body {
     height: 30vh;
     min-height: 160px;
     padding: 20px;
+}
+.quote-container{
+    display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ align-items: center; 
 }
 
 .change-quote {

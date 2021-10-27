@@ -1,0 +1,51 @@
+
+.settings {
+    position: absolute;
+    left: 20px;
+    bottom: -35%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    
+}
+
+.settings-canvas {
+    opacity: 1;
+
+    width: 300px;
+    height: 300px;
+    transition: 350ms ease-in-out;
+    background-color: rgba(255, 255, 255, 0.515);
+    padding: 15px 30px;
+
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+.show-items__list{
+    
+   list-style: none; 
+   display: flex;
+flex-direction: column;
+   flex-wrap: wrap;
+   align-items: flex-start;
+//    justify-content: space-between;
+}
+
+.show-item{
+    width: 100%;
+display: flex;
+justify-content: space-between;
+    &:not(:last-child){
+        margin-bottom: 5px;
+    }
+}
+
+
+
+.btn-settings{
+  width: 40px;
+ height: 40px;
+ background-size: 40px 40px;
+ background-image: url("../assets/svg/settings.svg");
+}

@@ -1,8 +1,6 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'Arial-MT';
   src: url("../assets/fonts/Arial-MT.woff");
-  /* Путь к файлу со шрифтом */
 }
 
 * {
@@ -24,6 +22,12 @@ body {
   background-blend-mode: multiply;
   -webkit-transition: background-image 1s ease-in-out;
   transition: background-image 1s ease-in-out;
+}
+
+.hidden {
+  visibility: hidden;
+  pointer-events: none !important;
+  opacity: 0 !important;
 }
 
 .header {
@@ -63,9 +67,8 @@ body {
 
 .play-item {
   position: relative;
-  padding: 5px;
+  padding: 0 5px;
   padding-left: 100px;
-  margin-bottom: 20px;
   list-style: none;
   opacity: .8;
   cursor: pointer;
@@ -96,7 +99,8 @@ body {
 
 .player-icon,
 .slider-icon,
-.change-quote {
+.change-quote,
+.settings-icon {
   display: block;
   width: 32px;
   height: 32px;
@@ -114,13 +118,15 @@ body {
 
 .player-icon:hover,
 .slider-icon:hover,
-.change-quote:hover {
+.change-quote:hover,
+.settings-icon:hover {
   opacity: 1;
 }
 
 .player-icon:active,
 .slider-icon:active,
-.change-quote:active {
+.change-quote:active,
+.settings-icon:active {
   border: 0;
   outline: 0;
   -webkit-transform: scale(1.1);
@@ -259,6 +265,7 @@ body {
   top: 50%;
   margin-top: -16px;
   cursor: pointer;
+  z-index: 10;
 }
 
 .slide-prev {
@@ -272,6 +279,9 @@ body {
 }
 
 .time {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   min-height: 124px;
   margin-bottom: 10px;
   font-family: 'Arial-MT';
@@ -280,6 +290,9 @@ body {
 }
 
 .date {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   min-height: 28px;
   font-size: 24px;
   margin-bottom: 20px;
@@ -364,6 +377,22 @@ body {
   padding: 20px;
 }
 
+.quote-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .change-quote {
   margin-bottom: 30px;
   background-image: url("../assets/svg/reload.svg");
@@ -395,12 +424,6 @@ body {
   }
 }
 
-.todo-canvas.hidden {
-  pointer-events: none;
-  overflow: hidden;
-  opacity: 0;
-}
-
 .todo {
   position: absolute;
   right: 20px;
@@ -417,14 +440,13 @@ body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  z-index: 10;
 }
 
 .todo-canvas {
-  opacity: 1;
   width: 300px;
-  -webkit-transition: opacity 250ms ease-in-out;
-  transition: opacity 250ms ease-in-out;
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   background-color: rgba(255, 255, 255, 0.515);
   padding: 30px 15px;
   border-radius: 15px;
@@ -533,5 +555,72 @@ body {
   border-radius: 5px;
   border: solid 2px white;
   cursor: pointer;
+}
+
+.settings {
+  position: absolute;
+  left: 20px;
+  bottom: -35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.settings-canvas {
+  opacity: 1;
+  width: 300px;
+  height: 300px;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
+  background-color: rgba(255, 255, 255, 0.515);
+  padding: 15px 30px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.show-items__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.show-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.show-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.btn-settings {
+  width: 40px;
+  height: 40px;
+  background-size: 40px 40px;
+  background-image: url("../assets/svg/settings.svg");
 }
 /*# sourceMappingURL=styles.css.map */

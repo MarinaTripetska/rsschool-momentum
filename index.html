@@ -42,6 +42,70 @@
         <input type="text" class="name" placeholder="[Enter name]" />
       </div>
 
+      <div class="settings">
+        <div class="settings-canvas hidden" id="settingsWindow">
+          <ul class="show-items__list">
+            <li class="">
+              <p>Language</p>
+              <label>
+                en
+                <input name="lang" type="radio" checked />
+              </label>
+              <label>
+                pl
+                <input name="lang" type="radio" />
+              </label>
+            </li>
+            <li class="">
+              <p>Background images</p>
+              <label>
+                Our collection
+                <input name="imgAPI" type="radio" checked />
+              </label>
+              <label>
+                Custom images
+                <input name="imgAPI" type="radio" />
+              </label>
+              <input type="text" disabled />
+            </li>
+
+            <li class="show-item">
+              <label for="show-time">Show Time</label>
+              <input type="checkbox" id="show-time" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-date">Show Date</label>
+              <input type="checkbox" id="show-date" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-greeting">Show Greeting</label>
+              <input type="checkbox" id="show-greeting" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-weather">Show Weather</label>
+              <input type="checkbox" id="show-weather" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-player">Show Player</label>
+              <input type="checkbox" id="show-player" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-todo">Show To Do List</label>
+              <input type="checkbox" id="show-todo" checked />
+            </li>
+            <li class="show-item">
+              <label for="show-quote">Show Quote</label>
+              <input type="checkbox" id="show-quote" checked />
+            </li>
+          </ul>
+        </div>
+
+        <button
+          type="button"
+          class="btn-settings settings-icon"
+          id="settingsOpenBtn"
+        ></button>
+      </div>
       <div class="todo">
         <div class="todo-canvas hidden" id="toDoWindow">
           <p class="notification"></p>
@@ -58,10 +122,12 @@
       </div>
     </main>
     <footer class="footer">
-      <button class="change-quote"></button>
-      <div>
-        <div class="quote"></div>
-        <div class="author"></div>
+      <div class="quote-container">
+        <button class="change-quote"></button>
+        <div>
+          <div class="quote"></div>
+          <div class="author"></div>
+        </div>
       </div>
     </footer>
     <script src="js/script.js" type="module"></script>

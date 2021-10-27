@@ -1,11 +1,7 @@
-const toDoListOpen = document.getElementById('toDoListOpen');
-const toDoWindow = document.getElementById('toDoWindow');
-const btnAddElem = document.getElementById("todo-button-add");
-         const inputElem = document.getElementById("input-txt");
-      const tasksList = document.querySelector(".tasks-list");
-      const notificationElem = document.querySelector(".notification");
+import refs from './refs.js';
+const { toDoListOpen, toDoWindow, btnAddElem, inputElem, tasksList, notificationElem } = refs;
 
-      function createMarkup(text) {
+function createMarkup(text) {
         const task = document.createElement("li");
         task.classList.add("task-item");
         // task.textContent = value;
