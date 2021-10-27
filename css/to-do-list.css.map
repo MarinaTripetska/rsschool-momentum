@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,OAAO,CAAA;EACD,QAAQ,EAAE,mBAAmB;EACjC,IAAI,EAAE,qBAAqB;EAC3B,IAAI,EAAE,wBAAwB;EAC9B,OAAO,EAAE,YAAY;EACrB,MAAM,EAAE,YAAY;EACpB,MAAM,EAAE,cAAc;EACtB,KAAK,EAAE,cAAc;EACrB,QAAQ,EAAE,MAAM;CACjB",
+    "sources": [
+        "../scss/partials/to-do-list.scss"
+    ],
+    "names": [],
+    "file": "to-do-list.css"
+}

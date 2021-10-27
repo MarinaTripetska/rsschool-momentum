@@ -394,4 +394,144 @@ body {
     padding: 5px;
   }
 }
+
+.todo-canvas.hidden {
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.todo {
+  position: absolute;
+  right: 20px;
+  bottom: -35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  z-index: 10;
+}
+
+.todo-canvas {
+  opacity: 1;
+  width: 300px;
+  -webkit-transition: opacity 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
+  background-color: rgba(255, 255, 255, 0.515);
+  padding: 30px 15px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+}
+
+.notification {
+  font-style: italic;
+  color: #822020c2;
+}
+
+.todo-add-area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-column-gap: 20px;
+          column-gap: 20px;
+}
+
+.todo-button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  border: solid 1px #e8dddd;
+  border-radius: 50%;
+  color: white;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.686);
+  border: solid 1px #e8dddd;
+  border-radius: 4px;
+  outline: none;
+}
+
+.tasks-list {
+  list-style: none;
+  text-align: right;
+}
+
+.task-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.task-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.task-item__content {
+  color: white;
+  font-size: 14px;
+  font-style: italic;
+  background-color: transparent;
+  border-radius: 3px;
+  border: none;
+}
+
+.btn-remove {
+  margin-right: 10px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 20px;
+  height: 23px;
+  color: white;
+  background-color: transparent;
+  border: solid 1px #e8dddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-open-list {
+  width: 75px;
+  height: 30px;
+  color: white;
+  background-color: transparent;
+  border-radius: 5px;
+  border: solid 2px white;
+  cursor: pointer;
+}
 /*# sourceMappingURL=styles.css.map */
