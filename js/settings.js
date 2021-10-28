@@ -90,5 +90,12 @@ window.addEventListener('DOMContentLoaded', ()=>{
 
 
 settingsOpenBtn.addEventListener('click', () => {
-    settingsWindow.classList.toggle('hidden')
+    settingsWindow.classList.toggle('hidden');
+
+   
 });
+
+
+
+
+

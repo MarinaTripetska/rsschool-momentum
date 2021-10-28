@@ -46,6 +46,12 @@ body {
   padding: 20px;
 }
 
+.player {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
+}
+
 .player-controls {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -159,6 +165,9 @@ body {
 }
 
 .weather {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,6 +308,9 @@ body {
 }
 
 .greeting-container {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,6 +390,9 @@ body {
 }
 
 .quote-container {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -425,6 +440,9 @@ body {
 }
 
 .todo {
+  opacity: 1;
+  -webkit-transition: 350ms ease-in-out;
+  transition: 350ms ease-in-out;
   position: absolute;
   right: 20px;
   bottom: -35%;

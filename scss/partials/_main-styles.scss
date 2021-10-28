@@ -40,7 +40,10 @@ body {
     min-height: 220px;
     padding: 20px;
 }
-
+.player{
+    opacity: 1;
+transition: 350ms ease-in-out;
+}
 .player-controls {
     display: flex;
     align-items: center;
@@ -143,6 +146,8 @@ body {
   width: 300px;
 }
 .weather {
+    opacity: 1;
+transition: 350ms ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -240,6 +245,8 @@ transition: 350ms ease-in-out;
 }
 
 .greeting-container {
+    opacity: 1;
+transition: 350ms ease-in-out;
     display: flex;
     flex-wrap: wrap;
     justify-content: stretch;
@@ -283,6 +290,8 @@ transition: 350ms ease-in-out;
     padding: 20px;
 }
 .quote-container{
+    opacity: 1;
+transition: 350ms ease-in-out;
     display: flex;
  flex-direction: column;
  justify-content: flex-end;

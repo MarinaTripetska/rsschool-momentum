@@ -1,5 +1,8 @@
 
-.todo{ position: absolute;
+.todo{ 
+  opacity: 1;
+transition: 350ms ease-in-out;
+  position: absolute;
   right: 20px;
   bottom: -35%;
   display: flex;
