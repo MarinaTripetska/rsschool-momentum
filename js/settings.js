@@ -87,6 +87,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 })
 
 
+// const KEY = 'f8af601d4ca4a583894667245f424307'
+async function fetch() {
+  const request= await fetch('https://api.unsplash.com/search/photos?page=1&query=office')
+const response = await console.log(request) 
+}
+
+
+
+
+
 
 
 settingsOpenBtn.addEventListener('click', () => {
