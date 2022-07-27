@@ -19,7 +19,8 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
+  background: center/cover, rgba(0, 0, 0, 0.3);
+  background-repeat: no-repeat;
   background-blend-mode: multiply;
   -webkit-transition: background-image 1s ease-in-out;
   transition: background-image 1s ease-in-out;
@@ -57,6 +58,7 @@ body {
 
 .play-list {
   text-align: left;
+  list-style: none;
 }
 
 .play-item {
@@ -68,6 +70,7 @@ body {
   cursor: pointer;
   -webkit-transition: .3s;
   transition: .3s;
+  z-index: 100;
 }
 
 .play-item:hover {
